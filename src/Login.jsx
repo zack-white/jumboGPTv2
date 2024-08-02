@@ -12,7 +12,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://gptbackend-kpmk.onrender.com/api/login', {
+      const response = await axios.post('https://gptbackend2-re8x.onrender.com/api/login', {
         username,
         password
       });

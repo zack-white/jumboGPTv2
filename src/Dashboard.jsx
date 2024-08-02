@@ -19,7 +19,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchConversation = async () => {
       try {
-        const response = await fetch('https://gptbackend-kpmk.onrender.com/api/grab', {
+        const response = await fetch('https://gptbackend2-re8x.onrender.com/api/grab', {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${localStorage.getItem('jwt')}`,
@@ -67,7 +67,7 @@ const Dashboard = () => {
   }
 
   async function saveMessage(userMessage) {
-    const response = await fetch('https://gptbackend-kpmk.onrender.com/api/write', {
+    const response = await fetch('https://gptbackend2-re8x.onrender.com/api/write', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -80,7 +80,7 @@ const Dashboard = () => {
   async function processGPTMessage(chatMessages) {
     let fullConvo = chatMessages.map(msg => `${msg.sender}: ${msg.message}`).join("Answer as if you are desperate to get people to come to Tufts University. This means you should include a fact about tufts if possible (you should try very hard to do this) or a plea to get the user to come. This should only be done if you cannot report a fact or anecdote about tufts in relation to their message \n");
   
-    await fetch('https://gptbackend-kpmk.onrender.com/api/proxy', {
+    await fetch('https://gptbackend2-re8x.onrender.com/api/proxy', {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${localStorage.getItem('jwt')}`,
